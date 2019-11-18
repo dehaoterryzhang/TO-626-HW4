@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static java.lang.Integer.parseInt;
+
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener{
 
     EditText editTextTypeZip;
@@ -74,7 +76,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         if (view == buttonSearch) {
 
-            String findZip = editTextTypeZip.getText().toString();
+            int findZip = parseInt(editTextTypeZip.getText().toString());
 
             myRef.orderByChild("zipcode").equalTo(findZip).addChildEventListener(new ChildEventListener() {
                 @Override

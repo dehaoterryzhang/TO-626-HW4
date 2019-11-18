@@ -16,6 +16,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import static java.lang.Integer.parseInt;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view == buttonSubmit) {
 
             String createNameBird = editTextNameBird.getText().toString();
-            String createZipcode = editTextZipcode.getText().toString();
+            int createZipcode = parseInt(editTextZipcode.getText().toString());
             String createNamePerson = editTextNamePerson.getText().toString();
 
             Bird createBird = new Bird(createNameBird, createZipcode, createNamePerson);
